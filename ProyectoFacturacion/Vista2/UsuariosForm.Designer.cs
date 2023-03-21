@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.CodigotextBox = new System.Windows.Forms.TextBox();
             this.NombretextBox = new System.Windows.Forms.TextBox();
@@ -40,16 +41,18 @@
             this.RolcomboBox = new System.Windows.Forms.ComboBox();
             this.EstaActivocheckBox = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.AdjuntarFotobutton = new System.Windows.Forms.Button();
-            this.FotopictureBox = new System.Windows.Forms.PictureBox();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Modificarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Cancelarbutton = new System.Windows.Forms.Button();
             this.UsuariosdataGridView = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.FotopictureBox)).BeginInit();
+            this.AdjuntarFotobutton = new System.Windows.Forms.Button();
+            this.FotopictureBox = new System.Windows.Forms.PictureBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.UsuariosdataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FotopictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -57,9 +60,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(31, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 18);
+            this.label1.Size = new System.Drawing.Size(116, 18);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Codigo Usuario :";
+            this.label1.Text = "Codigo Usuario:";
             // 
             // CodigotextBox
             // 
@@ -131,8 +134,14 @@
             // 
             // RolcomboBox
             // 
+            this.RolcomboBox.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.RolcomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.RolcomboBox.Enabled = false;
             this.RolcomboBox.FormattingEnabled = true;
+            this.RolcomboBox.Items.AddRange(new object[] {
+            "Administrador",
+            "Contador",
+            "Recursos Humanos"});
             this.RolcomboBox.Location = new System.Drawing.Point(158, 180);
             this.RolcomboBox.Name = "RolcomboBox";
             this.RolcomboBox.Size = new System.Drawing.Size(177, 26);
@@ -142,7 +151,7 @@
             // 
             this.EstaActivocheckBox.AutoSize = true;
             this.EstaActivocheckBox.Enabled = false;
-            this.EstaActivocheckBox.Location = new System.Drawing.Point(157, 222);
+            this.EstaActivocheckBox.Location = new System.Drawing.Point(158, 222);
             this.EstaActivocheckBox.Name = "EstaActivocheckBox";
             this.EstaActivocheckBox.Size = new System.Drawing.Size(18, 17);
             this.EstaActivocheckBox.TabIndex = 12;
@@ -156,26 +165,6 @@
             this.label7.Size = new System.Drawing.Size(86, 18);
             this.label7.TabIndex = 13;
             this.label7.Text = "Esta Activo:";
-            // 
-            // AdjuntarFotobutton
-            // 
-            this.AdjuntarFotobutton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.AdjuntarFotobutton.Enabled = false;
-            this.AdjuntarFotobutton.Image = global::Vista2.Properties.Resources.lupa;
-            this.AdjuntarFotobutton.Location = new System.Drawing.Point(475, 85);
-            this.AdjuntarFotobutton.Name = "AdjuntarFotobutton";
-            this.AdjuntarFotobutton.Size = new System.Drawing.Size(36, 34);
-            this.AdjuntarFotobutton.TabIndex = 15;
-            this.AdjuntarFotobutton.UseVisualStyleBackColor = false;
-            // 
-            // FotopictureBox
-            // 
-            this.FotopictureBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.FotopictureBox.Location = new System.Drawing.Point(356, 12);
-            this.FotopictureBox.Name = "FotopictureBox";
-            this.FotopictureBox.Size = new System.Drawing.Size(113, 107);
-            this.FotopictureBox.TabIndex = 14;
-            this.FotopictureBox.TabStop = false;
             // 
             // Nuevobutton
             // 
@@ -198,6 +187,7 @@
             this.Modificarbutton.TabIndex = 17;
             this.Modificarbutton.Text = "Modificar";
             this.Modificarbutton.UseVisualStyleBackColor = false;
+            this.Modificarbutton.Click += new System.EventHandler(this.Modificarbutton_Click);
             // 
             // Guardarbutton
             // 
@@ -209,6 +199,7 @@
             this.Guardarbutton.TabIndex = 18;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.UseVisualStyleBackColor = false;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // Eliminarbutton
             // 
@@ -231,6 +222,7 @@
             this.Cancelarbutton.TabIndex = 20;
             this.Cancelarbutton.Text = "Cancelar";
             this.Cancelarbutton.UseVisualStyleBackColor = false;
+            this.Cancelarbutton.Click += new System.EventHandler(this.Cancelarbutton_Click);
             // 
             // UsuariosdataGridView
             // 
@@ -242,6 +234,32 @@
             this.UsuariosdataGridView.RowTemplate.Height = 24;
             this.UsuariosdataGridView.Size = new System.Drawing.Size(520, 149);
             this.UsuariosdataGridView.TabIndex = 21;
+            // 
+            // AdjuntarFotobutton
+            // 
+            this.AdjuntarFotobutton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.AdjuntarFotobutton.Enabled = false;
+            this.AdjuntarFotobutton.Image = global::Vista2.Properties.Resources.lupa;
+            this.AdjuntarFotobutton.Location = new System.Drawing.Point(475, 85);
+            this.AdjuntarFotobutton.Name = "AdjuntarFotobutton";
+            this.AdjuntarFotobutton.Size = new System.Drawing.Size(36, 34);
+            this.AdjuntarFotobutton.TabIndex = 15;
+            this.AdjuntarFotobutton.UseVisualStyleBackColor = false;
+            this.AdjuntarFotobutton.Click += new System.EventHandler(this.AdjuntarFotobutton_Click);
+            // 
+            // FotopictureBox
+            // 
+            this.FotopictureBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.FotopictureBox.Location = new System.Drawing.Point(356, 12);
+            this.FotopictureBox.Name = "FotopictureBox";
+            this.FotopictureBox.Size = new System.Drawing.Size(113, 107);
+            this.FotopictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.FotopictureBox.TabIndex = 14;
+            this.FotopictureBox.TabStop = false;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // UsuariosForm
             // 
@@ -274,8 +292,9 @@
             this.Name = "UsuariosForm";
             this.Text = "UsuariosForm";
             this.TransparencyKey = System.Drawing.Color.Transparent;
-            ((System.ComponentModel.ISupportInitialize)(this.FotopictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsuariosdataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FotopictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,5 +322,6 @@
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.Button Cancelarbutton;
         private System.Windows.Forms.DataGridView UsuariosdataGridView;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

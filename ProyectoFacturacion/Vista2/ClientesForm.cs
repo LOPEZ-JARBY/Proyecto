@@ -19,8 +19,54 @@ namespace Vista2
         {
 
         }
+        private void Cancelarbutton_Click(object sender, EventArgs e)
+        {
+            DeshabilitarControles();
 
-        private void label3_Click(object sender, EventArgs e)
+        }
+
+        private void Nuevobutton_Click(object sender, EventArgs e)
+        {
+            NombretextBox.Focus();
+            HabilitarControles();
+        }
+
+        private void HabilitarControles()
+        {
+            NombretextBox.Enabled = true;
+            IdentidadtextBox.Enabled = true;
+            TelefonotextBox.Enabled = true;
+            CorreotextBox.Enabled = true;
+            DirreciontextBox.Enabled = true;
+            EstaActivocheckBox.Enabled = true;
+            Guardarbutton.Enabled = true;
+            Cancelarbutton.Enabled = true;
+            Eliminarbutton.Enabled = false;
+        }
+
+        private void DeshabilitarControles()
+        {
+            NombretextBox.Enabled = false;
+            IdentidadtextBox.Enabled = false;
+            TelefonotextBox.Enabled = false;
+            CorreotextBox.Enabled = false;
+            DirreciontextBox.Enabled = false;
+            EstaActivocheckBox.Enabled = false;
+            Guardarbutton.Enabled = false;
+            Eliminarbutton.Enabled = true;
+        }
+
+        private void LimpiarControles()
+        {
+            NombretextBox.Clear();
+            IdentidadtextBox.Clear();
+            TelefonotextBox.Clear();
+            CorreotextBox.Clear();
+            DirreciontextBox.Clear();
+            EstaActivocheckBox.Checked = false;
+        }
+
+        private void Guardarbutton_Click(object sender, EventArgs e)
         {
 
         }

@@ -31,21 +31,16 @@ namespace Vista2
             productosForm.Show();
         }
 
-        private void ClientestoolStripButton_Click(object sender, EventArgs e)
+        private void NuevaFacturatoolStripButton_Click(object sender, EventArgs e)
         {
 
         }
 
-         private void ClientestoolStripTabItem_Click(object sender, EventArgs e)
-         {
-             ProductosForm clientesForm = new ProductosForm();
-             clientesForm.MdiParent = this;
-             clientesForm.Show();
-
-         }
-
-        private void NuevaFacturatoolStripButton_Click(object sender, EventArgs e)
+        private void ClientestoolStripButton_Click(object sender, EventArgs e)
         {
+            ClientesForm clientesForm = new ClientesForm();
+            clientesForm.MdiParent = this;
+            clientesForm.Show();
 
         }
     }

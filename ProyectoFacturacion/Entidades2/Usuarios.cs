@@ -13,6 +13,7 @@ namespace Entidades2
         public String Contrasena{ get; set; }
         public String Correo{ get; set; }
         public String Rol { get; set; }
+        public byte[] Foto { get; set; }
         public DateTime FechaCreacion { get; set; }
         public bool EstaActivo { get; set; }
 
@@ -20,13 +21,14 @@ namespace Entidades2
         {
         }
 
-        public Usuarios(string codigoUsuario, string nombre, string contrasena, string correo, string rol, DateTime fechaCreacion, bool estaActivo)
+        public Usuarios(string codigoUsuario, string nombre, string contrasena, string correo, string rol, byte[] foto, DateTime fechaCreacion, bool estaActivo)
         {
             CodigoUsuario = codigoUsuario;
             Nombre = nombre;
             Contrasena = contrasena;
             Correo = correo;
             Rol = rol;
+            Foto = foto;
             FechaCreacion = fechaCreacion;
             EstaActivo = estaActivo;
         }

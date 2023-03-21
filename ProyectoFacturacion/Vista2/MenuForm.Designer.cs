@@ -32,15 +32,15 @@
             this.ribbonControlAdv1 = new Syncfusion.Windows.Forms.Tools.RibbonControlAdv();
             this.SeguridadestoolStripTabItem = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             this.toolStripEx1 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
+            this.UsuariostoolStripButton = new System.Windows.Forms.ToolStripButton();
             this.InventariotoolStripTabItem = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             this.toolStripEx2 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
+            this.ProductostoolStripButton = new System.Windows.Forms.ToolStripButton();
             this.ClientestoolStripTabItem = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             this.toolStripEx3 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
+            this.ClientestoolStripButton = new System.Windows.Forms.ToolStripButton();
             this.VentastoolStripTabItem = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             this.toolStripEx4 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
-            this.UsuariostoolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.ProductostoolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.ClientestoolStripButton = new System.Windows.Forms.ToolStripButton();
             this.NuevaFacturatoolStripButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlAdv1)).BeginInit();
             this.ribbonControlAdv1.SuspendLayout();
@@ -59,7 +59,7 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(533, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(533, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -72,7 +72,7 @@
             this.ribbonControlAdv1.Header.AddMainItem(InventariotoolStripTabItem);
             this.ribbonControlAdv1.Header.AddMainItem(ClientestoolStripTabItem);
             this.ribbonControlAdv1.Header.AddMainItem(VentastoolStripTabItem);
-            this.ribbonControlAdv1.Location = new System.Drawing.Point(0, 30);
+            this.ribbonControlAdv1.Location = new System.Drawing.Point(0, 24);
             this.ribbonControlAdv1.MenuButtonFont = new System.Drawing.Font("Segoe UI", 8.25F);
             this.ribbonControlAdv1.MenuButtonText = "";
             this.ribbonControlAdv1.MenuButtonWidth = 56;
@@ -112,7 +112,7 @@
             this.SeguridadestoolStripTabItem.Panel.TabIndex = 2;
             this.SeguridadestoolStripTabItem.Panel.Text = "SEGURIDADES";
             this.SeguridadestoolStripTabItem.Position = 0;
-            this.SeguridadestoolStripTabItem.Size = new System.Drawing.Size(101, 23);
+            this.SeguridadestoolStripTabItem.Size = new System.Drawing.Size(115, 41);
             this.SeguridadestoolStripTabItem.Tag = "1";
             this.SeguridadestoolStripTabItem.Text = "SEGURIDADES";
             // 
@@ -134,6 +134,18 @@
             this.toolStripEx1.Size = new System.Drawing.Size(94, 67);
             this.toolStripEx1.TabIndex = 0;
             // 
+            // UsuariostoolStripButton
+            // 
+            this.UsuariostoolStripButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.UsuariostoolStripButton.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsuariostoolStripButton.Image = global::Vista2.Properties.Resources.grupo__1_;
+            this.UsuariostoolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.UsuariostoolStripButton.Name = "UsuariostoolStripButton";
+            this.UsuariostoolStripButton.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
+            this.UsuariostoolStripButton.Size = new System.Drawing.Size(85, 45);
+            this.UsuariostoolStripButton.Text = "Usuarios";
+            this.UsuariostoolStripButton.Click += new System.EventHandler(this.UsuariostoolStripButton_Click);
+            // 
             // InventariotoolStripTabItem
             // 
             this.InventariotoolStripTabItem.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -147,7 +159,7 @@
             this.InventariotoolStripTabItem.Panel.TabIndex = 3;
             this.InventariotoolStripTabItem.Panel.Text = "INVENTARIO";
             this.InventariotoolStripTabItem.Position = 1;
-            this.InventariotoolStripTabItem.Size = new System.Drawing.Size(92, 23);
+            this.InventariotoolStripTabItem.Size = new System.Drawing.Size(106, 41);
             this.InventariotoolStripTabItem.Tag = "1";
             this.InventariotoolStripTabItem.Text = "INVENTARIO";
             // 
@@ -169,6 +181,16 @@
             this.toolStripEx2.Size = new System.Drawing.Size(103, 67);
             this.toolStripEx2.TabIndex = 0;
             // 
+            // ProductostoolStripButton
+            // 
+            this.ProductostoolStripButton.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductostoolStripButton.Image = global::Vista2.Properties.Resources.caja;
+            this.ProductostoolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ProductostoolStripButton.Name = "ProductostoolStripButton";
+            this.ProductostoolStripButton.Size = new System.Drawing.Size(94, 45);
+            this.ProductostoolStripButton.Text = "Productos";
+            this.ProductostoolStripButton.Click += new System.EventHandler(this.InvetoolStripButton_Click);
+            // 
             // ClientestoolStripTabItem
             // 
             this.ClientestoolStripTabItem.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -182,7 +204,7 @@
             this.ClientestoolStripTabItem.Panel.TabIndex = 4;
             this.ClientestoolStripTabItem.Panel.Text = "CLIENTES";
             this.ClientestoolStripTabItem.Position = 2;
-            this.ClientestoolStripTabItem.Size = new System.Drawing.Size(72, 23);
+            this.ClientestoolStripTabItem.Size = new System.Drawing.Size(86, 41);
             this.ClientestoolStripTabItem.Tag = "1";
             this.ClientestoolStripTabItem.Text = "CLIENTES";
             // 
@@ -201,8 +223,18 @@
             this.toolStripEx3.Office12Mode = false;
             this.toolStripEx3.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripEx3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripEx3.Size = new System.Drawing.Size(90, 67);
+            this.toolStripEx3.Size = new System.Drawing.Size(129, 67);
             this.toolStripEx3.TabIndex = 0;
+            // 
+            // ClientestoolStripButton
+            // 
+            this.ClientestoolStripButton.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientestoolStripButton.Image = global::Vista2.Properties.Resources.caja;
+            this.ClientestoolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ClientestoolStripButton.Name = "ClientestoolStripButton";
+            this.ClientestoolStripButton.Size = new System.Drawing.Size(81, 45);
+            this.ClientestoolStripButton.Text = "Clientes";
+            this.ClientestoolStripButton.Click += new System.EventHandler(this.ClientestoolStripButton_Click);
             // 
             // VentastoolStripTabItem
             // 
@@ -217,7 +249,7 @@
             this.VentastoolStripTabItem.Panel.TabIndex = 5;
             this.VentastoolStripTabItem.Panel.Text = "VENTAS";
             this.VentastoolStripTabItem.Position = 3;
-            this.VentastoolStripTabItem.Size = new System.Drawing.Size(66, 23);
+            this.VentastoolStripTabItem.Size = new System.Drawing.Size(80, 41);
             this.VentastoolStripTabItem.Tag = "1";
             this.VentastoolStripTabItem.Text = "VENTAS";
             // 
@@ -238,38 +270,6 @@
             this.toolStripEx4.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.toolStripEx4.Size = new System.Drawing.Size(129, 67);
             this.toolStripEx4.TabIndex = 0;
-            // 
-            // UsuariostoolStripButton
-            // 
-            this.UsuariostoolStripButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.UsuariostoolStripButton.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsuariostoolStripButton.Image = global::Vista2.Properties.Resources.grupo__1_;
-            this.UsuariostoolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.UsuariostoolStripButton.Name = "UsuariostoolStripButton";
-            this.UsuariostoolStripButton.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
-            this.UsuariostoolStripButton.Size = new System.Drawing.Size(85, 45);
-            this.UsuariostoolStripButton.Text = "Usuarios";
-            this.UsuariostoolStripButton.Click += new System.EventHandler(this.UsuariostoolStripButton_Click);
-            // 
-            // ProductostoolStripButton
-            // 
-            this.ProductostoolStripButton.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductostoolStripButton.Image = global::Vista2.Properties.Resources.caja;
-            this.ProductostoolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ProductostoolStripButton.Name = "ProductostoolStripButton";
-            this.ProductostoolStripButton.Size = new System.Drawing.Size(94, 45);
-            this.ProductostoolStripButton.Text = "Productos";
-            this.ProductostoolStripButton.Click += new System.EventHandler(this.InvetoolStripButton_Click);
-            // 
-            // ClientestoolStripButton
-            // 
-            this.ClientestoolStripButton.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClientestoolStripButton.Image = global::Vista2.Properties.Resources.caja;
-            this.ClientestoolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ClientestoolStripButton.Name = "ClientestoolStripButton";
-            this.ClientestoolStripButton.Size = new System.Drawing.Size(81, 45);
-            this.ClientestoolStripButton.Text = "Clientes";
-            this.ClientestoolStripButton.Click += new System.EventHandler(this.ClientestoolStripButton_Click);
             // 
             // NuevaFacturatoolStripButton
             // 
