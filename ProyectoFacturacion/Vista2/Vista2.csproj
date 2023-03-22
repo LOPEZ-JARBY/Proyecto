@@ -168,6 +168,10 @@
     <None Include="Resources\lupa.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Datos2\Datos2.csproj">
+      <Project>{34F769AA-BD31-4A51-AD7E-3C567492192E}</Project>
+      <Name>Datos2</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entidades2\Entidades2.csproj">
       <Project>{42B91FE6-0CDB-4245-836E-2713EC5152F1}</Project>
       <Name>Entidades2</Name>

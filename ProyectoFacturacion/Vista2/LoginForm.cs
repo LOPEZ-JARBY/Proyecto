@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Datos2;
+using Entidades2;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -42,11 +44,34 @@ namespace Vista2
 
             //validad en la base de datos
 
-            //Mostrar Menu
+            Login login = new Login(UsuariotextBox.Text, ContrasenatextBox.Text);
+            Usuarios usuario = new Usuarios();
+            UsuariosDB usuarioDB = new UsuariosDB();
 
-           MenuForm menuFormulario = new MenuForm();
-            this.Hide();
-            menuFormulario.ShowDialog();
+            usuario = usuarioDB.Autenticar(login);
+
+            if (usuario != null)
+            {
+                if (usuario.EstaActivo)
+                {
+                    //Mostrar Menu
+
+                    MenuForm menuFormulario = new MenuForm();
+                    this.Hide();
+                    menuFormulario.ShowDialog();
+
+                }
+                else
+                {
+                    MessageBox.Show("El usuario no esta activo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Datos de usuario incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+               
 
         }
 

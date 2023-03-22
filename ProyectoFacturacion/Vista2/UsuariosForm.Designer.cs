@@ -141,7 +141,8 @@
             this.RolcomboBox.Items.AddRange(new object[] {
             "Administrador",
             "Contador",
-            "Recursos Humanos"});
+            "Recursos Humanos",
+            "Auxiliar"});
             this.RolcomboBox.Location = new System.Drawing.Point(158, 180);
             this.RolcomboBox.Name = "RolcomboBox";
             this.RolcomboBox.Size = new System.Drawing.Size(177, 26);
@@ -180,7 +181,6 @@
             // Modificarbutton
             // 
             this.Modificarbutton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Modificarbutton.Enabled = false;
             this.Modificarbutton.Location = new System.Drawing.Point(120, 265);
             this.Modificarbutton.Name = "Modificarbutton";
             this.Modificarbutton.Size = new System.Drawing.Size(90, 34);
@@ -226,13 +226,15 @@
             // 
             // UsuariosdataGridView
             // 
+            this.UsuariosdataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.UsuariosdataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.UsuariosdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.UsuariosdataGridView.Location = new System.Drawing.Point(3, 335);
+            this.UsuariosdataGridView.Location = new System.Drawing.Point(-2, 319);
             this.UsuariosdataGridView.Name = "UsuariosdataGridView";
             this.UsuariosdataGridView.RowHeadersWidth = 51;
             this.UsuariosdataGridView.RowTemplate.Height = 24;
-            this.UsuariosdataGridView.Size = new System.Drawing.Size(520, 149);
+            this.UsuariosdataGridView.Size = new System.Drawing.Size(834, 149);
             this.UsuariosdataGridView.TabIndex = 21;
             // 
             // AdjuntarFotobutton
@@ -267,7 +269,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.CaptionForeColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(523, 496);
+            this.ClientSize = new System.Drawing.Size(830, 496);
             this.Controls.Add(this.UsuariosdataGridView);
             this.Controls.Add(this.Cancelarbutton);
             this.Controls.Add(this.Eliminarbutton);
@@ -292,6 +294,7 @@
             this.Name = "UsuariosForm";
             this.Text = "UsuariosForm";
             this.TransparencyKey = System.Drawing.Color.Transparent;
+            this.Load += new System.EventHandler(this.UsuariosForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.UsuariosdataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FotopictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

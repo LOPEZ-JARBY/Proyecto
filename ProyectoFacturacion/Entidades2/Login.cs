@@ -10,17 +10,15 @@ namespace Entidades2
     {
         public string CodigoUsuario { get; set; }
         public string Contrasena { get; set; }
-        public string Rol { get; set; }
 
         public Login()
         {
         }
 
-        public Login(string codigoUsuario, string contrasena, string rol)
+        public Login(string codigoUsuario, string contrasena)
         {
             CodigoUsuario = codigoUsuario;
             Contrasena = contrasena;
-            Rol = rol;
         }
     }
 }
