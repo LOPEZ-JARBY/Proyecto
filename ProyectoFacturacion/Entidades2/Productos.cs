@@ -13,20 +13,18 @@ namespace Entidades2
         public int Existencia { get; set; }
         public decimal Precio { get; set; }
         public byte[] Foto { get; set; }
-        public bool EstaActivo { get; set; }
 
         public Productos()
         {
         }
 
-        public Productos(string codigo, string descripcion, int existencia, decimal precio, byte[] foto, bool estaActivo)
+        public Productos(string codigo, string descripcion, int existencia, decimal precio, byte[] foto)
         {
             Codigo = codigo;
             Descripcion = descripcion;
             Existencia = existencia;
             Precio = precio;
             Foto = foto;
-            EstaActivo = estaActivo;
         }
     }
 }

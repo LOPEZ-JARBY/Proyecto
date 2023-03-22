@@ -14,7 +14,7 @@ namespace Vista2
         {
             InitializeComponent();
         }
-
+        string operar;
         private void ClientesForm_Load(object sender, EventArgs e)
         {
 
@@ -22,6 +22,7 @@ namespace Vista2
         private void Cancelarbutton_Click(object sender, EventArgs e)
         {
             DeshabilitarControles();
+            LimpiarControles();
 
         }
 
@@ -68,6 +69,51 @@ namespace Vista2
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
+            if (operar == "Nuevo")
+            {
+                if (string.IsNullOrEmpty(NombretextBox.Text))
+                {
+                    errorProvider1.SetError(NombretextBox, "Ingrese el nombre");
+                    NombretextBox.Focus();
+                    return;
+                }
+                errorProvider1.Clear();
+
+                if (string.IsNullOrEmpty(IdentidadtextBox.Text))
+                {
+                    errorProvider1.SetError(IdentidadtextBox, "Ingrese su numero de identidad");
+                    IdentidadtextBox.Focus();
+                    return;
+                }
+                errorProvider1.Clear();
+
+                if (string.IsNullOrEmpty(TelefonotextBox.Text))
+                {
+                    errorProvider1.SetError(TelefonotextBox, "Ingrese su telefono");
+                    TelefonotextBox.Focus();
+                    return;
+                }
+                errorProvider1.Clear();
+
+                if (string.IsNullOrEmpty(CorreotextBox.Text))
+                {
+                    errorProvider1.SetError(CorreotextBox, "Ingrese su correo");
+                    CorreotextBox.Focus();
+                    return;
+                }
+                errorProvider1.Clear();
+
+                if (string.IsNullOrEmpty(DirreciontextBox.Text))
+                {
+                    errorProvider1.SetError(DirreciontextBox, "Ingrese su correo");
+                    DirreciontextBox.Focus();
+                    return;
+                }
+                errorProvider1.Clear();
+            }else
+            {
+
+            }
 
         }
     }
