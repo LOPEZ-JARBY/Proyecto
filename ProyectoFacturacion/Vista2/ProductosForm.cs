@@ -78,11 +78,11 @@ namespace Vista2
                 ExistenciatextBox.Text = ProductosdataGridView.CurrentRow.Cells["Existencia"].Value.ToString();
                 PreciotextBox.Text = ProductosdataGridView.CurrentRow.Cells["Precio"].Value.ToString();
 
-                byte[] img = productoDB.DevolverFoto(ProductosdataGridView.CurrentRow.Cells["Codigo"].Value.ToString());
+                byte[] Foto = productoDB.DevolverFoto(ProductosdataGridView.CurrentRow.Cells["Codigo"].Value.ToString());
 
-                if (img.Length > 0)
+                if (Foto.Length > 0)
                 {
-                    MemoryStream ms = new MemoryStream(img);
+                    MemoryStream ms = new MemoryStream(Foto);
                     FotopictureBox.Image = System.Drawing.Bitmap.FromStream(ms);
                 }
                 HabilitarControles();
@@ -101,7 +101,14 @@ namespace Vista2
             productos.Descripcion = DescripciontextBox.Text;
             productos.Precio = Convert.ToDecimal(PreciotextBox.Text);
             productos.Existencia = Convert.ToInt32(ExistenciatextBox.Text);
-          
+
+            if (FotopictureBox.Image != null)
+            {
+                System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                FotopictureBox.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                productos.Foto = ms.GetBuffer();
+            }
+
             if (operacion == "Nuevo")
             {
                 if (string.IsNullOrEmpty(CodigotextBox.Text))
@@ -131,7 +138,7 @@ namespace Vista2
 
                 if (string.IsNullOrEmpty(PreciotextBox.Text))
                 {
-                    errorProvider1.SetError(PreciotextBox, "Ingrese el precio");
+                    errorProvider1.SetError(PreciotextBox, "Ingrese un precio");
                     PreciotextBox.Focus();
                     return;
                 }
@@ -208,38 +215,42 @@ namespace Vista2
             }
         }
 
+        private void ProductosForm_Load(object sender, EventArgs e)
+        {
+            TraerProductos();
+
+        }
+        private void TraerProductos()
+        {
+            ProductosdataGridView.DataSource = productoDB.DevolverProductos();
+        }
+
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
             if (ProductosdataGridView.SelectedRows.Count > 0)
             {
                 DialogResult resultado = MessageBox.Show("Esta seguro de eliminar el registro", "Advertencia", MessageBoxButtons.YesNo);
-
                 if (resultado == DialogResult.Yes)
                 {
                     bool elimino = productoDB.Eliminar(ProductosdataGridView.CurrentRow.Cells["Codigo"].Value.ToString());
-
                     if (elimino)
                     {
                         LimpiarControles();
                         DeshabilitarControles();
                         TraerProductos();
                         MessageBox.Show("Registro eliminado");
+
                     }
                     else
-                    { MessageBox.Show("No se pudo eliminar el registro"); }
+                    {
+                        MessageBox.Show("No se pudo eliminar el registro");
+
+                    }
+
                 }
+
             }
-        }
 
-        private void TraerProductos()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void ProductosForm_Load(object sender, EventArgs e)
-        {
-
-            TraerProductos();
         }
     }
 }

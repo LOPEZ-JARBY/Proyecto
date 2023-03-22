@@ -46,7 +46,10 @@
             this.EstaActivocheckBox = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ClientesdataGridView = new System.Windows.Forms.DataGridView();
+            this.Modificarbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientesdataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -64,7 +67,7 @@
             // 
             this.NombretextBox.Enabled = false;
             this.NombretextBox.Location = new System.Drawing.Point(172, 41);
-            this.NombretextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.NombretextBox.Margin = new System.Windows.Forms.Padding(4);
             this.NombretextBox.Name = "NombretextBox";
             this.NombretextBox.Size = new System.Drawing.Size(285, 27);
             this.NombretextBox.TabIndex = 1;
@@ -73,7 +76,7 @@
             // 
             this.IdentidadtextBox.Enabled = false;
             this.IdentidadtextBox.Location = new System.Drawing.Point(172, 91);
-            this.IdentidadtextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.IdentidadtextBox.Margin = new System.Windows.Forms.Padding(4);
             this.IdentidadtextBox.Name = "IdentidadtextBox";
             this.IdentidadtextBox.Size = new System.Drawing.Size(185, 27);
             this.IdentidadtextBox.TabIndex = 3;
@@ -93,7 +96,7 @@
             // 
             this.TelefonotextBox.Enabled = false;
             this.TelefonotextBox.Location = new System.Drawing.Point(172, 132);
-            this.TelefonotextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TelefonotextBox.Margin = new System.Windows.Forms.Padding(4);
             this.TelefonotextBox.Name = "TelefonotextBox";
             this.TelefonotextBox.Size = new System.Drawing.Size(124, 27);
             this.TelefonotextBox.TabIndex = 5;
@@ -113,7 +116,7 @@
             // 
             this.CorreotextBox.Enabled = false;
             this.CorreotextBox.Location = new System.Drawing.Point(172, 167);
-            this.CorreotextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CorreotextBox.Margin = new System.Windows.Forms.Padding(4);
             this.CorreotextBox.Name = "CorreotextBox";
             this.CorreotextBox.Size = new System.Drawing.Size(266, 27);
             this.CorreotextBox.TabIndex = 7;
@@ -133,7 +136,7 @@
             // 
             this.DirreciontextBox.Enabled = false;
             this.DirreciontextBox.Location = new System.Drawing.Point(172, 220);
-            this.DirreciontextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DirreciontextBox.Margin = new System.Windows.Forms.Padding(4);
             this.DirreciontextBox.Name = "DirreciontextBox";
             this.DirreciontextBox.Size = new System.Drawing.Size(124, 27);
             this.DirreciontextBox.TabIndex = 9;
@@ -153,8 +156,8 @@
             // 
             this.Cancelarbutton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Cancelarbutton.Enabled = false;
-            this.Cancelarbutton.Location = new System.Drawing.Point(334, 294);
-            this.Cancelarbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Cancelarbutton.Location = new System.Drawing.Point(453, 297);
+            this.Cancelarbutton.Margin = new System.Windows.Forms.Padding(4);
             this.Cancelarbutton.Name = "Cancelarbutton";
             this.Cancelarbutton.Size = new System.Drawing.Size(106, 42);
             this.Cancelarbutton.TabIndex = 25;
@@ -166,20 +169,21 @@
             // 
             this.Eliminarbutton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Eliminarbutton.Enabled = false;
-            this.Eliminarbutton.Location = new System.Drawing.Point(232, 295);
-            this.Eliminarbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Eliminarbutton.Location = new System.Drawing.Point(351, 298);
+            this.Eliminarbutton.Margin = new System.Windows.Forms.Padding(4);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(94, 40);
             this.Eliminarbutton.TabIndex = 24;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.UseVisualStyleBackColor = false;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Guardarbutton
             // 
             this.Guardarbutton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Guardarbutton.Enabled = false;
-            this.Guardarbutton.Location = new System.Drawing.Point(124, 296);
-            this.Guardarbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Guardarbutton.Location = new System.Drawing.Point(242, 298);
+            this.Guardarbutton.Margin = new System.Windows.Forms.Padding(4);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(101, 40);
             this.Guardarbutton.TabIndex = 23;
@@ -191,7 +195,7 @@
             // 
             this.Nuevobutton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Nuevobutton.Location = new System.Drawing.Point(22, 298);
-            this.Nuevobutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Nuevobutton.Margin = new System.Windows.Forms.Padding(4);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(94, 38);
             this.Nuevobutton.TabIndex = 21;
@@ -204,7 +208,7 @@
             this.EstaActivocheckBox.AutoSize = true;
             this.EstaActivocheckBox.Enabled = false;
             this.EstaActivocheckBox.Location = new System.Drawing.Point(172, 255);
-            this.EstaActivocheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EstaActivocheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.EstaActivocheckBox.Name = "EstaActivocheckBox";
             this.EstaActivocheckBox.Size = new System.Drawing.Size(18, 17);
             this.EstaActivocheckBox.TabIndex = 26;
@@ -225,13 +229,39 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // ClientesdataGridView
+            // 
+            this.ClientesdataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ClientesdataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientesdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ClientesdataGridView.Location = new System.Drawing.Point(4, 369);
+            this.ClientesdataGridView.Name = "ClientesdataGridView";
+            this.ClientesdataGridView.RowHeadersWidth = 51;
+            this.ClientesdataGridView.RowTemplate.Height = 24;
+            this.ClientesdataGridView.Size = new System.Drawing.Size(579, 150);
+            this.ClientesdataGridView.TabIndex = 28;
+            // 
+            // Modificarbutton
+            // 
+            this.Modificarbutton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Modificarbutton.Location = new System.Drawing.Point(123, 296);
+            this.Modificarbutton.Name = "Modificarbutton";
+            this.Modificarbutton.Size = new System.Drawing.Size(112, 42);
+            this.Modificarbutton.TabIndex = 29;
+            this.Modificarbutton.Text = "Modificar";
+            this.Modificarbutton.UseVisualStyleBackColor = false;
+            this.Modificarbutton.Click += new System.EventHandler(this.Modificarbutton_Click);
+            // 
             // ClientesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.CaptionForeColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(586, 445);
+            this.ClientSize = new System.Drawing.Size(586, 523);
+            this.Controls.Add(this.Modificarbutton);
+            this.Controls.Add(this.ClientesdataGridView);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.EstaActivocheckBox);
             this.Controls.Add(this.Cancelarbutton);
@@ -249,12 +279,13 @@
             this.Controls.Add(this.NombretextBox);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ClientesForm";
             this.Text = "ClientesForm";
             this.TransparencyKey = System.Drawing.Color.Transparent;
             this.Load += new System.EventHandler(this.ClientesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientesdataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,5 +310,7 @@
         private System.Windows.Forms.CheckBox EstaActivocheckBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.DataGridView ClientesdataGridView;
+        private System.Windows.Forms.Button Modificarbutton;
     }
 }

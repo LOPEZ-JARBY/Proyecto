@@ -236,6 +236,7 @@
             this.UsuariosdataGridView.RowTemplate.Height = 24;
             this.UsuariosdataGridView.Size = new System.Drawing.Size(834, 149);
             this.UsuariosdataGridView.TabIndex = 21;
+         
             // 
             // AdjuntarFotobutton
             // 
