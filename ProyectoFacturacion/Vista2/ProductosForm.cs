@@ -1,9 +1,11 @@
-﻿using Entidades2;
+﻿using Datos2;
+using Entidades2;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
@@ -16,9 +18,12 @@ namespace Vista2
             InitializeComponent();
         }
         string operacion;
+        ProductosDB productoDB = new ProductosDB();
+        Productos productos;
 
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
+            operacion = "Nuevo";
             HabilitarControles();
 
         }
@@ -65,10 +70,38 @@ namespace Vista2
         private void Modificarbutton_Click(object sender, EventArgs e)
         {
             operacion = "Modificar";
+
+            if (ProductosdataGridView.SelectedRows.Count > 0)
+            {
+                CodigotextBox.Text = ProductosdataGridView.CurrentRow.Cells["Codigo"].Value.ToString();
+                DescripciontextBox.Text = ProductosdataGridView.CurrentRow.Cells["Descripcion"].Value.ToString();
+                ExistenciatextBox.Text = ProductosdataGridView.CurrentRow.Cells["Existencia"].Value.ToString();
+                PreciotextBox.Text = ProductosdataGridView.CurrentRow.Cells["Precio"].Value.ToString();
+
+                byte[] img = productoDB.DevolverFoto(ProductosdataGridView.CurrentRow.Cells["Codigo"].Value.ToString());
+
+                if (img.Length > 0)
+                {
+                    MemoryStream ms = new MemoryStream(img);
+                    FotopictureBox.Image = System.Drawing.Bitmap.FromStream(ms);
+                }
+                HabilitarControles();
+                CodigotextBox.ReadOnly = true;
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un registro");
+            }
         }
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
+            productos = new Productos();
+            productos.Codigo = CodigotextBox.Text;
+            productos.Descripcion = DescripciontextBox.Text;
+            productos.Precio = Convert.ToDecimal(PreciotextBox.Text);
+            productos.Existencia = Convert.ToInt32(ExistenciatextBox.Text);
+          
             if (operacion == "Nuevo")
             {
                 if (string.IsNullOrEmpty(CodigotextBox.Text))
@@ -104,11 +137,37 @@ namespace Vista2
                 }
                 errorProvider1.Clear();
 
+                bool inserto = productoDB.Insertar(productos);
+                if (inserto)
+                {
+                    DeshabilitarControles();
+                    LimpiarControles();
+                    TraerProductos();
+                    MessageBox.Show("Registro guardado con exito", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se puro guardar el registro", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
             }
             else if (operacion == "Modificar")
             {
-                
+
+                bool modifico = productoDB.Editar(productos);
+                if (modifico)
+                {
+                    CodigotextBox.ReadOnly = false;
+                    DeshabilitarControles();
+                    LimpiarControles();
+                    TraerProductos();
+                    MessageBox.Show("Registro actualizado con exito", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se puro actualizar el registro", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
         }
 
@@ -136,6 +195,51 @@ namespace Vista2
             {
                 e.Handled = true;
             }
+        }
+
+        private void AdjuntarFotobutton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            DialogResult resultado = dialog.ShowDialog();
+
+            if (resultado == DialogResult.OK)
+            {
+                FotopictureBox.Image = Image.FromFile(dialog.FileName);
+            }
+        }
+
+        private void Eliminarbutton_Click(object sender, EventArgs e)
+        {
+            if (ProductosdataGridView.SelectedRows.Count > 0)
+            {
+                DialogResult resultado = MessageBox.Show("Esta seguro de eliminar el registro", "Advertencia", MessageBoxButtons.YesNo);
+
+                if (resultado == DialogResult.Yes)
+                {
+                    bool elimino = productoDB.Eliminar(ProductosdataGridView.CurrentRow.Cells["Codigo"].Value.ToString());
+
+                    if (elimino)
+                    {
+                        LimpiarControles();
+                        DeshabilitarControles();
+                        TraerProductos();
+                        MessageBox.Show("Registro eliminado");
+                    }
+                    else
+                    { MessageBox.Show("No se pudo eliminar el registro"); }
+                }
+            }
+        }
+
+        private void TraerProductos()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ProductosForm_Load(object sender, EventArgs e)
+        {
+
+            TraerProductos();
         }
     }
 }

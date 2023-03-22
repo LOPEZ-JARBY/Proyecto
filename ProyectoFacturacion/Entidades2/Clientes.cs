@@ -8,6 +8,7 @@ namespace Entidades2
 {
     public class Clientes
     {
+        public int Id { get; set; }
         public string Identidad { get; set; }
         public string Nombre { get; set; }
         public string Telefono { get; set; }

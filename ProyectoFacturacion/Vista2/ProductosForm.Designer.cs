@@ -45,8 +45,10 @@
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.AdjuntarFotobutton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ProductosdataGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.FotopictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductosdataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -151,6 +153,7 @@
             this.Eliminarbutton.TabIndex = 24;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.UseVisualStyleBackColor = false;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Guardarbutton
             // 
@@ -167,7 +170,6 @@
             // Modificarbutton
             // 
             this.Modificarbutton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Modificarbutton.Enabled = false;
             this.Modificarbutton.Location = new System.Drawing.Point(121, 276);
             this.Modificarbutton.Name = "Modificarbutton";
             this.Modificarbutton.Size = new System.Drawing.Size(112, 42);
@@ -197,17 +199,30 @@
             this.AdjuntarFotobutton.TabIndex = 26;
             this.AdjuntarFotobutton.UseCompatibleTextRendering = true;
             this.AdjuntarFotobutton.UseVisualStyleBackColor = false;
+            this.AdjuntarFotobutton.Click += new System.EventHandler(this.AdjuntarFotobutton_Click);
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // ProductosdataGridView
+            // 
+            this.ProductosdataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ProductosdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ProductosdataGridView.Location = new System.Drawing.Point(-1, 343);
+            this.ProductosdataGridView.Name = "ProductosdataGridView";
+            this.ProductosdataGridView.RowHeadersWidth = 51;
+            this.ProductosdataGridView.RowTemplate.Height = 24;
+            this.ProductosdataGridView.Size = new System.Drawing.Size(637, 161);
+            this.ProductosdataGridView.TabIndex = 27;
             // 
             // ProductosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(637, 472);
+            this.ClientSize = new System.Drawing.Size(637, 505);
+            this.Controls.Add(this.ProductosdataGridView);
             this.Controls.Add(this.AdjuntarFotobutton);
             this.Controls.Add(this.Cancelarbutton);
             this.Controls.Add(this.Eliminarbutton);
@@ -226,8 +241,10 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ProductosForm";
             this.Text = "ProductosForm";
+            this.Load += new System.EventHandler(this.ProductosForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.FotopictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductosdataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,5 +268,6 @@
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.Button AdjuntarFotobutton;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.DataGridView ProductosdataGridView;
     }
 }
